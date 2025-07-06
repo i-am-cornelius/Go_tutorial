@@ -12,8 +12,8 @@ func greet() {
 }
 
 // Takes parameter(s), has no return value
-func greet_user(user_name string) {
-	fmt.Println("Hi", user_name)
+func greetUser(userName string) {
+	fmt.Println("Hi", userName)
 }
 
 func add(a int32, b int32) {
@@ -42,7 +42,7 @@ func divide(a int32, b int32) (int32, int32, error) {
 	return a / b, int32(math.Pow(float64(a), float64(b))), err
 }
 
-// Variadic functions i.e can receive any number of arguments
+// Variadic functions (can receive any number of arguments of the specified type)
 func sum(nums ...int32) {
 	fmt.Print(nums, " ") // The arguments will be printed as an array
 	var total int32 = 0
@@ -62,7 +62,7 @@ func factorial(num uint) uint {
 
 func main() {
 	greet()
-	greet_user("Cornelius")
+	greetUser("Cornelius")
 
 	fmt.Println(multiply(2, 3))
 
@@ -79,10 +79,10 @@ func main() {
 	add(x, y)
 
 	fmt.Println("\nReturning multiple values (division, power, error)")
-	var quotient, power, error_result = divide(20, 5)
+	var quotient, power, errorResult = divide(20, 5)
 
-	if error_result != nil {
-		fmt.Println(error_result.Error())
+	if errorResult != nil {
+		fmt.Println(errorResult.Error())
 	} else {
 		fmt.Println(quotient, power)
 	}

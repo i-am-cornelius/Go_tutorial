@@ -39,18 +39,18 @@ func main() {
 		fmt.Println("You are a senior")
 	}
 
-	var sum, product, error_result = divide(20, 5)
+	var sum, product, errorResult = divide(20, 5)
 
-	if error_result != nil {
-		fmt.Println(error_result.Error())
+	if errorResult != nil {
+		fmt.Println(errorResult.Error())
 	} else {
 		fmt.Println(sum, product)
 	}
 
 	// Switch statement
 	switch {
-	case error_result != nil:
-		fmt.Println(error_result.Error())
+	case errorResult != nil:
+		fmt.Println(errorResult.Error())
 	case sum > product:
 		fmt.Println("Sum", sum, "is greater than product", product)
 	case sum == product:
@@ -73,7 +73,7 @@ func main() {
 	}
 
 	// The variable can also be created as part of the expression
-	switch day_num := 1; day_num {
+	switch dayNum := 1; dayNum {
 	case 1:
 		fmt.Println("Monday")
 	case 2:
