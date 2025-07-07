@@ -31,7 +31,7 @@ func save(result string) {
 
 func log() {
 	mutex.RLock()
-	fmt.Println("The results is", results)
+	fmt.Println("The current results is", results)
 	mutex.RUnlock()
 }
 
