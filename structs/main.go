@@ -5,11 +5,11 @@ import "fmt"
 // Struct allows bundling together data that relate to each other in usage, essentially creating a new data type
 
 type Person struct {
-	first_name string
-	last_name  string
-	age        uint8
-	is_male    bool
-	career     CareerPath
+	firstName string
+	lastName  string
+	age       uint8
+	isMale    bool
+	career    CareerPath
 
 	// properties can be added just by type, without a name
 	int
@@ -17,7 +17,7 @@ type Person struct {
 }
 
 type CareerPath struct {
-	person_career string
+	personCareer string
 }
 
 type Religion struct {
@@ -26,54 +26,54 @@ type Religion struct {
 
 // Methods(The syntax is different from normal functions because methods are bound to the receiver )
 func (person Person) greet() {
-	fmt.Println("Hello", person.first_name, person.last_name)
+	fmt.Println("Hello", person.firstName, person.lastName)
 }
 
-func (person Person) get_age() (string, uint8, string) {
-	user_name := fmt.Sprintf("%s %s is", person.first_name, person.last_name)
-	return user_name, person.age, "years old"
+func (person Person) getAge() (string, uint8, string) {
+	userName := fmt.Sprintf("%s %s is", person.firstName, person.lastName)
+	return userName, person.age, "years old"
 }
 
 // more logic usage
 func canVote(person Person, age uint8) string {
 	if age >= 18 {
-		return person.first_name + " can vote"
+		return person.firstName + " can vote"
 	}
-	return person.first_name + " cannot vote"
+	return person.firstName + " cannot vote"
 }
 
 func main() {
-	person_1 := Person{"John", "Doe", 100, true, CareerPath{"used in software examples"}, 1, Religion{"Christian"}}
-	fmt.Println(person_1)
-	fmt.Println(person_1.first_name)
-	fmt.Println(person_1.age)
+	person1 := Person{"John", "Doe", 100, true, CareerPath{"used in software examples"}, 1, Religion{"Christian"}}
+	fmt.Println(person1)
+	fmt.Println(person1.firstName)
+	fmt.Println(person1.age)
 
-	person_1.last_name = "Thompson" // modifiable from the outside
-	fmt.Println(person_1)
+	person1.lastName = "Thompson" // modifiable from the outside
+	fmt.Println(person1)
 
 	// A struct can be created on the go for a one-time use, so no reusability
-	person_2 := struct {
-		first_name string
-		last_name  string
-		age        uint8
-		is_male    bool
-		career     CareerPath
-	}{first_name: "Jane", last_name: "Doe", age: 20, is_male: false, career: CareerPath{"Also used in software examples"}}
-	fmt.Println(person_2)
-	fmt.Println(person_2.first_name)
+	person2 := struct {
+		firstName string
+		lastName  string
+		age       uint8
+		isMale    bool
+		career    CareerPath
+	}{firstName: "Jane", lastName: "Doe", age: 20, isMale: false, career: CareerPath{"Also used in software examples"}}
+	fmt.Println(person2)
+	fmt.Println(person2.firstName)
 
-	person_1.greet()
-	fmt.Println(person_1.get_age())
+	person1.greet()
+	fmt.Println(person1.getAge())
 
-	if person_2.is_male {
-		fmt.Println(person_2.first_name, "is a male")
+	if person2.isMale {
+		fmt.Println(person2.firstName, "is a male")
 	} else {
-		fmt.Println(person_2.first_name, "is a female")
+		fmt.Println(person2.firstName, "is a female")
 	}
 
-	person_3 := Person{"Sam", "Ade", 15, true, CareerPath{"Chef"}, 2, Religion{"Atheist"}}
-	fmt.Println(canVote(person_3, person_3.age))
-	fmt.Println(canVote(person_1, person_1.age))
+	person3 := Person{"Sam", "Ade", 15, true, CareerPath{"Chef"}, 2, Religion{"Atheist"}}
+	fmt.Println(canVote(person3, person3.age))
+	fmt.Println(canVote(person1, person1.age))
 	// fmt.Println(canVote(person_2, person_2.age)) // Error! since person_2 is not a Person struct. but the value person_2.age can be used
 
 }

@@ -21,4 +21,10 @@ func main() {
 	for i := 1; i <= count; i++ {
 		fmt.Printf("%d. Hey \n", i)
 	}
+	fmt.Println()
+
+	// Count down
+	for i = 10; i >= 0; i-- {
+		fmt.Println(i)
+	}
 }

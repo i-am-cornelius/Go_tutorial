@@ -35,7 +35,7 @@ func (ostrich Ostrich) move() {
 	println("Flightless, runs on 2 legs")
 }
 
-func check_animal(animal Animal) {
+func checkAnimal(animal Animal) {
 	if animal.sound() == "barks" {
 		fmt.Println("this is a dog")
 	} else {
@@ -44,21 +44,21 @@ func check_animal(animal Animal) {
 }
 
 func main() {
-	dog_1 := Dog{name: "Edge"}
-	ostrich_1 := Ostrich{name: "Colo"}
+	dog1 := Dog{name: "Edge"}
+	ostrich1 := Ostrich{name: "Colo"}
 
 	// Calling the method individually
-	fmt.Println(dog_1.sound())
-	dog_1.move()
+	fmt.Println(dog1.sound())
+	dog1.move()
 	fmt.Println()
-	fmt.Println(ostrich_1.sound())
-	ostrich_1.move()
+	fmt.Println(ostrich1.sound())
+	ostrich1.move()
 
-	check_animal(dog_1)
-	check_animal(ostrich_1)
+	checkAnimal(dog1)
+	checkAnimal(ostrich1)
 
 	//
-	animals := []Animal{dog_1, ostrich_1}
+	animals := []Animal{dog1, ostrich1}
 	for _, animal := range animals {
 		fmt.Println(animal.sound())
 		animal.move()
