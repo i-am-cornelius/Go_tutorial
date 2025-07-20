@@ -64,4 +64,9 @@ func main() {
 	fmt.Printf("Time without preallocation: %s\n", timeMeasurement(sliceA, x)) // slower
 	fmt.Printf("Time with preallocation: %s\n", timeMeasurement(sliceB, x))    // much faster during my tests
 
+	namesSlice := [4]string{"Sam", "John", "Paul", "Tom"}
+	for index, element := range namesSlice {
+		fmt.Printf("%d. %s\n", index, element)
+	}
+
 }

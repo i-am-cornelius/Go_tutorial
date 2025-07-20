@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	// Map like in other languages is used to hold key-value pairs
+	// Map like in other languages is used to hold data as key-value pairs
 	// Syntax : map[key type] value type{key : value}
 	var countryAndCity = map[string]string{"USA": "New York", "India": "Delhi", "Japan": "Tokyo", "China": "Shanghai"}
 	fmt.Println(countryAndCity)
@@ -54,5 +54,9 @@ func main() {
 	for name, age := range userAge {
 		fmt.Printf("%s is %d years old\n", name, age)
 	}
+
+	// Change the value  using the key
+	userAge["Sam"] = 250
+	fmt.Println(userAge)
 
 }
